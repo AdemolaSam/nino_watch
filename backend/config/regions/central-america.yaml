@@ -1,0 +1,13 @@
+id: central-america
+name: Central America
+names: [Guatemala, Honduras, El Salvador, Nicaragua, Costa Rica, Panama, Belize]
+risk: moderate
+intensity: 0.4
+pilot: false
+center: {lat: 14, lng: -87}
+bbox: [-93, 6, -76, 19]
+countries: [Guatemala, Honduras, El Salvador, Nicaragua, Costa Rica, Panama, Belize]
+languages: [en]
+news_sources: []
+official_sources: []
+weather: {hot_threshold_c: 35, anomaly_threshold_c: 1.5, baseline_start: 2015, baseline_end: 2025}

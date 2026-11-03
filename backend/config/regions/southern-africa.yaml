@@ -1,0 +1,13 @@
+id: southern-africa
+name: Southern Africa
+names: [South Africa, Zimbabwe, Zambia, Mozambique, Botswana, Namibia, Malawi, Angola]
+risk: moderate
+intensity: 0.45
+pilot: false
+center: {lat: -20, lng: 25}
+bbox: [10, -35, 42, -5]
+countries: [South Africa, Zimbabwe, Zambia, Mozambique, Botswana, Namibia, Malawi, Angola]
+languages: [en]
+news_sources: []
+official_sources: []
+weather: {hot_threshold_c: 35, anomaly_threshold_c: 1.5, baseline_start: 2015, baseline_end: 2025}

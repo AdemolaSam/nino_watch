@@ -1,0 +1,17 @@
+id: southeast-asia
+name: Southeast Asia
+names: [Southeast Asia]
+risk: high
+intensity: 0.8
+pilot: true
+center: {lat: 5, lng: 110}
+bbox: [95, -10, 140, 20]   # west, south, east, north
+countries: [Indonesia, Philippines, Vietnam, Thailand]
+languages: [en, id, tl, vi, th]
+# Sources verified 1 Nov 2026: feed reachable, robots allow. Full ToS review
+# still pending before production use; demo use only (headlines + short excerpt).
+news_sources:
+  - {name: "Philstar", url: "https://www.philstar.com/rss/headlines", language: en, ownership_group: "Philstar Media Group"}
+  - {name: "Inquirer Newsinfo", url: "https://newsinfo.inquirer.net/feed", language: en, ownership_group: "Inquirer Group"}
+official_sources: []
+weather: {hot_threshold_c: 35, anomaly_threshold_c: 1.5, baseline_start: 2015, baseline_end: 2025}

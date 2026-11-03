@@ -1,0 +1,45 @@
+# Editorial summaries of published seasonal outlooks. These are outlooks, not
+# observed incidents or country-level health-risk scores.
+outlooks:
+  - region_id: sahel-nigeria
+    hazard: heat
+    summary: Above-average seasonal temperatures are more likely across large parts of the world; local heat impacts require local forecasts.
+    source: WMO Global Seasonal Climate Update
+    source_url: https://wmo.int/resources/publication-series/global-seasonal-climate-updates/gscu-ndj2026
+    issued_at: 2026-10-21
+    valid_through: 2027-01-31
+  - region_id: southeast-asia
+    hazard: heat and drought
+    summary: Warmer conditions and rainfall deficits may increase heat exposure and pressure on agriculture in Southeast Asia.
+    source: WMO El Niño and humanitarian action
+    source_url: https://wmo.int/secretariat/celeste-saulo/el-nino-and-humanitarian-action
+    issued_at: 2026-10-21
+    valid_through: 2027-01-31
+  - region_id: east-africa
+    hazard: heavy rainfall and flooding
+    summary: Wetter-than-normal conditions are more likely in parts of the Greater Horn of Africa.
+    source: WMO Global Seasonal Climate Update
+    source_url: https://wmo.int/news/media-centre/sea-surface-temperatures-reflect-strengthening-el-nino
+    issued_at: 2026-10-08
+    valid_through: 2026-12-31
+  - region_id: southern-africa
+    hazard: drought and water stress
+    summary: Southern parts of the southwest Indian Ocean region need to prepare for drought and water stress.
+    source: WMO Southwest Indian Ocean outlook
+    source_url: https://public.wmo.int/media/news/el-nino-will-unleash-multiple-hazards-south-west-indian-ocean-region
+    issued_at: 2026-10-01
+    valid_through: 2027-03-31
+  - region_id: central-america
+    hazard: rainfall deficit
+    summary: Drier-than-normal conditions are forecast over southern Central America and parts of the Caribbean.
+    source: WMO Global Seasonal Climate Update
+    source_url: https://wmo.int/news/media-centre/sea-surface-temperatures-reflect-strengthening-el-nino
+    issued_at: 2026-10-08
+    valid_through: 2026-12-31
+  - region_id: andean-coast
+    hazard: rainfall deficit
+    summary: Drier-than-normal conditions are forecast over northwestern South America.
+    source: WMO Global Seasonal Climate Update
+    source_url: https://wmo.int/news/media-centre/sea-surface-temperatures-reflect-strengthening-el-nino
+    issued_at: 2026-10-08
+    valid_through: 2026-12-31

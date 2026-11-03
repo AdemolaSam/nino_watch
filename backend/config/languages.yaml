@@ -1,0 +1,21 @@
+languages:
+  # Source language; always available.
+  - {code: en, label: English, tested: true, reviewer: n/a, date: n/a}
+  # Candidates: flipped to tested:true only after a fluent reader passes the
+  # output in evals/language/ (see BACKEND.md 8.6).
+  - {code: ha, label: Hausa, tested: false, reviewer: null, date: null}
+  - {code: yo, label: Yoruba, tested: false, reviewer: null, date: null}
+  - {code: pcm, label: Nigerian Pidgin, tested: false, reviewer: null, date: null}
+  - {code: sw, label: Swahili, tested: false, reviewer: null, date: null}
+  - {code: id, label: Bahasa Indonesia, tested: false, reviewer: null, date: null}
+  - {code: tl, label: Tagalog, tested: false, reviewer: null, date: null}
+  - {code: vi, label: Vietnamese, tested: false, reviewer: null, date: null}
+  - {code: th, label: Thai, tested: false, reviewer: null, date: null}
+  - {code: km, label: Khmer, tested: false, reviewer: null, date: null}
+  - {code: es, label: Spanish, tested: false, reviewer: null, date: null}
+  - {code: ar, label: Arabic, tested: false, reviewer: null, date: null}
+  - {code: fr, label: French, tested: false, reviewer: null, date: null}
+  - {code: pt, label: Portuguese, tested: false, reviewer: null, date: null}
+  - {code: hi, label: Hindi, tested: false, reviewer: null, date: null}
+  - {code: bn, label: Bengali, tested: false, reviewer: null, date: null}
+  - {code: ur, label: Urdu, tested: false, reviewer: null, date: null}

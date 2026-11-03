@@ -1,0 +1,698 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Ni\u00f1oWatch API",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/api/health": {
+      "get": {
+        "summary": "Health",
+        "operationId": "health_api_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/regions": {
+      "get": {
+        "summary": "List Regions",
+        "operationId": "list_regions_api_regions_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/RegionResponse"
+                  },
+                  "type": "array",
+                  "title": "Response List Regions Api Regions Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/regions/{region_id}": {
+      "get": {
+        "summary": "Get Region",
+        "operationId": "get_region_api_regions__region_id__get",
+        "parameters": [
+          {
+            "name": "region_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Region Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegionResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/incidents": {
+      "get": {
+        "summary": "List Incidents",
+        "operationId": "list_incidents_api_incidents_get",
+        "parameters": [
+          {
+            "name": "regionId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Regionid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IncidentResponse"
+                  },
+                  "title": "Response List Incidents Api Incidents Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/regions/{region_id}/climate": {
+      "get": {
+        "summary": "Get Climate",
+        "operationId": "get_climate_api_regions__region_id__climate_get",
+        "parameters": [
+          {
+            "name": "region_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Region Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClimateResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/advisories/{region_id}": {
+      "get": {
+        "summary": "Get Advisory",
+        "operationId": "get_advisory_api_advisories__region_id__get",
+        "parameters": [
+          {
+            "name": "region_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Region Id"
+            }
+          },
+          {
+            "name": "lang",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "en",
+              "title": "Lang"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdvisoryResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/outlet-packs/{region_id}": {
+      "get": {
+        "summary": "Get Outlet Pack",
+        "operationId": "get_outlet_pack_api_outlet_packs__region_id__get",
+        "parameters": [
+          {
+            "name": "region_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Region Id"
+            }
+          },
+          {
+            "name": "lang",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "en",
+              "title": "Lang"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OutletPackResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AdvisoryResponse": {
+        "properties": {
+          "regionId": {
+            "type": "string",
+            "title": "Regionid"
+          },
+          "lang": {
+            "type": "string",
+            "title": "Lang"
+          },
+          "available": {
+            "type": "boolean",
+            "title": "Available"
+          },
+          "happening": {
+            "type": "string",
+            "title": "Happening"
+          },
+          "atRisk": {
+            "type": "string",
+            "title": "Atrisk"
+          },
+          "actions": {
+            "type": "string",
+            "title": "Actions"
+          }
+        },
+        "type": "object",
+        "required": [
+          "regionId",
+          "lang",
+          "available",
+          "happening",
+          "atRisk",
+          "actions"
+        ],
+        "title": "AdvisoryResponse"
+      },
+      "ClimateCellResponse": {
+        "properties": {
+          "lat": {
+            "type": "number",
+            "title": "Lat"
+          },
+          "lng": {
+            "type": "number",
+            "title": "Lng"
+          },
+          "temp": {
+            "type": "number",
+            "title": "Temp"
+          },
+          "anomaly": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Anomaly"
+          }
+        },
+        "type": "object",
+        "required": [
+          "lat",
+          "lng",
+          "temp",
+          "anomaly"
+        ],
+        "title": "ClimateCellResponse"
+      },
+      "ClimateResponse": {
+        "properties": {
+          "bbox": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array",
+            "title": "Bbox"
+          },
+          "cols": {
+            "type": "integer",
+            "title": "Cols"
+          },
+          "rows": {
+            "type": "integer",
+            "title": "Rows"
+          },
+          "baselineYears": {
+            "type": "string",
+            "title": "Baselineyears"
+          },
+          "generatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Generatedat"
+          },
+          "cells": {
+            "items": {
+              "$ref": "#/components/schemas/ClimateCellResponse"
+            },
+            "type": "array",
+            "title": "Cells"
+          }
+        },
+        "type": "object",
+        "required": [
+          "bbox",
+          "cols",
+          "rows",
+          "baselineYears",
+          "generatedAt",
+          "cells"
+        ],
+        "title": "ClimateResponse"
+      },
+      "CountryValue": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "value": {
+            "type": "number",
+            "title": "Value"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "value"
+        ],
+        "title": "CountryValue"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "HealthResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "db": {
+            "type": "string",
+            "title": "Db"
+          },
+          "redis": {
+            "type": "string",
+            "title": "Redis"
+          },
+          "lastIngestAt": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Lastingestat"
+          }
+        },
+        "type": "object",
+        "required": [
+          "status",
+          "db",
+          "redis",
+          "lastIngestAt"
+        ],
+        "title": "HealthResponse"
+      },
+      "HeatPoint": {
+        "properties": {
+          "lat": {
+            "type": "number",
+            "title": "Lat"
+          },
+          "lng": {
+            "type": "number",
+            "title": "Lng"
+          },
+          "value": {
+            "type": "number",
+            "title": "Value"
+          }
+        },
+        "type": "object",
+        "required": [
+          "lat",
+          "lng",
+          "value"
+        ],
+        "title": "HeatPoint"
+      },
+      "IncidentResponse": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "regionId": {
+            "type": "string",
+            "title": "Regionid"
+          },
+          "lat": {
+            "type": "number",
+            "title": "Lat"
+          },
+          "lng": {
+            "type": "number",
+            "title": "Lng"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "evidence": {
+            "type": "string",
+            "title": "Evidence"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "regionId",
+          "lat",
+          "lng",
+          "title",
+          "status",
+          "evidence"
+        ],
+        "title": "IncidentResponse"
+      },
+      "LanguageRef": {
+        "properties": {
+          "code": {
+            "type": "string",
+            "title": "Code"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          }
+        },
+        "type": "object",
+        "required": [
+          "code",
+          "label"
+        ],
+        "title": "LanguageRef"
+      },
+      "OutletPackResponse": {
+        "properties": {
+          "regionId": {
+            "type": "string",
+            "title": "Regionid"
+          },
+          "lang": {
+            "type": "string",
+            "title": "Lang"
+          },
+          "available": {
+            "type": "boolean",
+            "title": "Available"
+          },
+          "radioScript": {
+            "type": "string",
+            "title": "Radioscript"
+          },
+          "sms": {
+            "type": "string",
+            "title": "Sms"
+          }
+        },
+        "type": "object",
+        "required": [
+          "regionId",
+          "lang",
+          "available",
+          "radioScript",
+          "sms"
+        ],
+        "title": "OutletPackResponse"
+      },
+      "RegionResponse": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "names": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Names"
+          },
+          "bbox": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array",
+            "title": "Bbox"
+          },
+          "risk": {
+            "type": "string",
+            "title": "Risk"
+          },
+          "lat": {
+            "type": "number",
+            "title": "Lat"
+          },
+          "lng": {
+            "type": "number",
+            "title": "Lng"
+          },
+          "intensity": {
+            "type": "number",
+            "title": "Intensity"
+          },
+          "heat": {
+            "items": {
+              "$ref": "#/components/schemas/HeatPoint"
+            },
+            "type": "array",
+            "title": "Heat"
+          },
+          "countries": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/CountryValue"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Countries"
+          },
+          "languages": {
+            "items": {
+              "$ref": "#/components/schemas/LanguageRef"
+            },
+            "type": "array",
+            "title": "Languages"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "names",
+          "bbox",
+          "risk",
+          "lat",
+          "lng",
+          "intensity",
+          "heat",
+          "languages"
+        ],
+        "title": "RegionResponse"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}

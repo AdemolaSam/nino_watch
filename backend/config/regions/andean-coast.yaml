@@ -1,0 +1,13 @@
+id: andean-coast
+name: Andean coast
+names: [Peru, Ecuador]
+risk: moderate
+intensity: 0.4
+pilot: false
+center: {lat: -8, lng: -78}
+bbox: [-84, -20, -68, 5]
+countries: [Peru, Ecuador]
+languages: [en]
+news_sources: []
+official_sources: []
+weather: {hot_threshold_c: 35, anomaly_threshold_c: 1.5, baseline_start: 2015, baseline_end: 2025}

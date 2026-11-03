@@ -1,0 +1,766 @@
+{
+  "provider": "echo",
+  "model": "offline",
+  "prompt_version": "v1",
+  "n": 30,
+  "relevance_accuracy": 0.6666666666666666,
+  "type_precision": null,
+  "type_recall": 0.0,
+  "place_precision": null,
+  "place_recall": 0.0,
+  "date_precision": null,
+  "date_recall": 0.0,
+  "errors": 0,
+  "details": [
+    {
+      "id": "real-01",
+      "expected": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": null,
+        "country": null,
+        "event_date": null
+      },
+      "predicted": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": {
+          "name": "",
+          "country": ""
+        },
+        "event_date": null,
+        "count": null,
+        "stated_cause": null,
+        "evidence_quote": "[FAKE ECHO] Today's date: 2026-11-01 Region: eval Article language: en Title: Flamingos beat",
+        "language": "en",
+        "confidence": 0.0
+      },
+      "error": null
+    },
+    {
+      "id": "real-02",
+      "expected": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": null,
+        "country": null,
+        "event_date": null
+      },
+      "predicted": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": {
+          "name": "",
+          "country": ""
+        },
+        "event_date": null,
+        "count": null,
+        "stated_cause": null,
+        "evidence_quote": "[FAKE ECHO] Today's date: 2026-11-01 Region: eval Article language: en Title: Movie director",
+        "language": "en",
+        "confidence": 0.0
+      },
+      "error": null
+    },
+    {
+      "id": "real-03",
+      "expected": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": null,
+        "country": null,
+        "event_date": null
+      },
+      "predicted": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": {
+          "name": "",
+          "country": ""
+        },
+        "event_date": null,
+        "count": null,
+        "stated_cause": null,
+        "evidence_quote": "[FAKE ECHO] Today's date: 2026-11-01 Region: eval Article language: en Title: Soldiers kill ",
+        "language": "en",
+        "confidence": 0.0
+      },
+      "error": null
+    },
+    {
+      "id": "real-04",
+      "expected": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": null,
+        "country": null,
+        "event_date": null
+      },
+      "predicted": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": {
+          "name": "",
+          "country": ""
+        },
+        "event_date": null,
+        "count": null,
+        "stated_cause": null,
+        "evidence_quote": "[FAKE ECHO] Today's date: 2026-11-01 Region: eval Article language: en Title: Portuguese pol",
+        "language": "en",
+        "confidence": 0.0
+      },
+      "error": null
+    },
+    {
+      "id": "real-05",
+      "expected": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": null,
+        "country": null,
+        "event_date": null
+      },
+      "predicted": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": {
+          "name": "",
+          "country": ""
+        },
+        "event_date": null,
+        "count": null,
+        "stated_cause": null,
+        "evidence_quote": "[FAKE ECHO] Today's date: 2026-11-01 Region: eval Article language: en Title: Man kills neig",
+        "language": "en",
+        "confidence": 0.0
+      },
+      "error": null
+    },
+    {
+      "id": "real-06",
+      "expected": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": null,
+        "country": null,
+        "event_date": null
+      },
+      "predicted": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": {
+          "name": "",
+          "country": ""
+        },
+        "event_date": null,
+        "count": null,
+        "stated_cause": null,
+        "evidence_quote": "[FAKE ECHO] Today's date: 2026-11-01 Region: eval Article language: en Title: Ministers urge",
+        "language": "en",
+        "confidence": 0.0
+      },
+      "error": null
+    },
+    {
+      "id": "real-07",
+      "expected": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": null,
+        "country": null,
+        "event_date": null
+      },
+      "predicted": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": {
+          "name": "",
+          "country": ""
+        },
+        "event_date": null,
+        "count": null,
+        "stated_cause": null,
+        "evidence_quote": "[FAKE ECHO] Today's date: 2026-11-01 Region: eval Article language: en Title: El Ni\u00f1o: Lagos",
+        "language": "en",
+        "confidence": 0.0
+      },
+      "error": null
+    },
+    {
+      "id": "real-08",
+      "expected": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": null,
+        "country": null,
+        "event_date": null
+      },
+      "predicted": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": {
+          "name": "",
+          "country": ""
+        },
+        "event_date": null,
+        "count": null,
+        "stated_cause": null,
+        "evidence_quote": "[FAKE ECHO] Today's date: 2026-11-01 Region: eval Article language: en Title: Police arrest ",
+        "language": "en",
+        "confidence": 0.0
+      },
+      "error": null
+    },
+    {
+      "id": "real-09",
+      "expected": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": null,
+        "country": null,
+        "event_date": null
+      },
+      "predicted": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": {
+          "name": "",
+          "country": ""
+        },
+        "event_date": null,
+        "count": null,
+        "stated_cause": null,
+        "evidence_quote": "[FAKE ECHO] Today's date: 2026-11-01 Region: eval Article language: en Title: Up to 2 tropic",
+        "language": "en",
+        "confidence": 0.0
+      },
+      "error": null
+    },
+    {
+      "id": "real-10",
+      "expected": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": null,
+        "country": null,
+        "event_date": null
+      },
+      "predicted": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": {
+          "name": "",
+          "country": ""
+        },
+        "event_date": null,
+        "count": null,
+        "stated_cause": null,
+        "evidence_quote": "[FAKE ECHO] Today's date: 2026-11-01 Region: eval Article language: en Title: Unknown fallen",
+        "language": "en",
+        "confidence": 0.0
+      },
+      "error": null
+    },
+    {
+      "id": "real-11",
+      "expected": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": null,
+        "country": null,
+        "event_date": null
+      },
+      "predicted": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": {
+          "name": "",
+          "country": ""
+        },
+        "event_date": null,
+        "count": null,
+        "stated_cause": null,
+        "evidence_quote": "[FAKE ECHO] Today's date: 2026-11-01 Region: eval Article language: en Title: NFA cuts palay",
+        "language": "en",
+        "confidence": 0.0
+      },
+      "error": null
+    },
+    {
+      "id": "real-12",
+      "expected": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": null,
+        "country": null,
+        "event_date": null
+      },
+      "predicted": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": {
+          "name": "",
+          "country": ""
+        },
+        "event_date": null,
+        "count": null,
+        "stated_cause": null,
+        "evidence_quote": "[FAKE ECHO] Today's date: 2026-11-01 Region: eval Article language: en Title: Missing UP stu",
+        "language": "en",
+        "confidence": 0.0
+      },
+      "error": null
+    },
+    {
+      "id": "real-13",
+      "expected": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": null,
+        "country": null,
+        "event_date": null
+      },
+      "predicted": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": {
+          "name": "",
+          "country": ""
+        },
+        "event_date": null,
+        "count": null,
+        "stated_cause": null,
+        "evidence_quote": "[FAKE ECHO] Today's date: 2026-11-01 Region: eval Article language: en Title: 3 marijuana pl",
+        "language": "en",
+        "confidence": 0.0
+      },
+      "error": null
+    },
+    {
+      "id": "real-14",
+      "expected": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": null,
+        "country": null,
+        "event_date": null
+      },
+      "predicted": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": {
+          "name": "",
+          "country": ""
+        },
+        "event_date": null,
+        "count": null,
+        "stated_cause": null,
+        "evidence_quote": "[FAKE ECHO] Today's date: 2026-11-01 Region: eval Article language: en Title: Ex-Abucay mayo",
+        "language": "en",
+        "confidence": 0.0
+      },
+      "error": null
+    },
+    {
+      "id": "real-15",
+      "expected": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": null,
+        "country": null,
+        "event_date": null
+      },
+      "predicted": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": {
+          "name": "",
+          "country": ""
+        },
+        "event_date": null,
+        "count": null,
+        "stated_cause": null,
+        "evidence_quote": "[FAKE ECHO] Today's date: 2026-11-01 Region: eval Article language: en Title: Bataan groups ",
+        "language": "en",
+        "confidence": 0.0
+      },
+      "error": null
+    },
+    {
+      "id": "real-16",
+      "expected": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": null,
+        "country": null,
+        "event_date": null
+      },
+      "predicted": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": {
+          "name": "",
+          "country": ""
+        },
+        "event_date": null,
+        "count": null,
+        "stated_cause": null,
+        "evidence_quote": "[FAKE ECHO] Today's date: 2026-11-01 Region: eval Article language: en Title: Public school ",
+        "language": "en",
+        "confidence": 0.0
+      },
+      "error": null
+    },
+    {
+      "id": "real-17",
+      "expected": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": null,
+        "country": null,
+        "event_date": null
+      },
+      "predicted": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": {
+          "name": "",
+          "country": ""
+        },
+        "event_date": null,
+        "count": null,
+        "stated_cause": null,
+        "evidence_quote": "[FAKE ECHO] Today's date: 2026-11-01 Region: eval Article language: en Title: Over 166,000 p",
+        "language": "en",
+        "confidence": 0.0
+      },
+      "error": null
+    },
+    {
+      "id": "real-18",
+      "expected": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": null,
+        "country": null,
+        "event_date": null
+      },
+      "predicted": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": {
+          "name": "",
+          "country": ""
+        },
+        "event_date": null,
+        "count": null,
+        "stated_cause": null,
+        "evidence_quote": "[FAKE ECHO] Today's date: 2026-11-01 Region: eval Article language: en Title: PPA logs over ",
+        "language": "en",
+        "confidence": 0.0
+      },
+      "error": null
+    },
+    {
+      "id": "real-19",
+      "expected": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": null,
+        "country": null,
+        "event_date": null
+      },
+      "predicted": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": {
+          "name": "",
+          "country": ""
+        },
+        "event_date": null,
+        "count": null,
+        "stated_cause": null,
+        "evidence_quote": "[FAKE ECHO] Today's date: 2026-11-01 Region: eval Article language: en Title: Farmer wanted ",
+        "language": "en",
+        "confidence": 0.0
+      },
+      "error": null
+    },
+    {
+      "id": "real-20",
+      "expected": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": null,
+        "country": null,
+        "event_date": null
+      },
+      "predicted": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": {
+          "name": "",
+          "country": ""
+        },
+        "event_date": null,
+        "count": null,
+        "stated_cause": null,
+        "evidence_quote": "[FAKE ECHO] Today's date: 2026-11-01 Region: eval Article language: en Title: Bacolod mayor ",
+        "language": "en",
+        "confidence": 0.0
+      },
+      "error": null
+    },
+    {
+      "id": "syn-01",
+      "expected": {
+        "is_relevant": true,
+        "event_type": "heat_illness",
+        "place": "Kano",
+        "country": "Nigeria",
+        "event_date": "2026-10-28"
+      },
+      "predicted": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": {
+          "name": "",
+          "country": ""
+        },
+        "event_date": null,
+        "count": null,
+        "stated_cause": null,
+        "evidence_quote": "[FAKE ECHO] Today's date: 2026-11-01 Region: eval Article language: en Title: Heat exhaustio",
+        "language": "en",
+        "confidence": 0.0
+      },
+      "error": null
+    },
+    {
+      "id": "syn-02",
+      "expected": {
+        "is_relevant": true,
+        "event_type": "heat_death",
+        "place": "Niamey",
+        "country": "Niger",
+        "event_date": "2026-10-25"
+      },
+      "predicted": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": {
+          "name": "",
+          "country": ""
+        },
+        "event_date": null,
+        "count": null,
+        "stated_cause": null,
+        "evidence_quote": "[FAKE ECHO] Today's date: 2026-11-01 Region: eval Article language: en Title: Three die of h",
+        "language": "en",
+        "confidence": 0.0
+      },
+      "error": null
+    },
+    {
+      "id": "syn-03",
+      "expected": {
+        "is_relevant": true,
+        "event_type": "flood",
+        "place": "Lagos",
+        "country": "Nigeria",
+        "event_date": "2026-10-20"
+      },
+      "predicted": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": {
+          "name": "",
+          "country": ""
+        },
+        "event_date": null,
+        "count": null,
+        "stated_cause": null,
+        "evidence_quote": "[FAKE ECHO] Today's date: 2026-11-01 Region: eval Article language: en Title: Floodwaters di",
+        "language": "en",
+        "confidence": 0.0
+      },
+      "error": null
+    },
+    {
+      "id": "syn-04",
+      "expected": {
+        "is_relevant": true,
+        "event_type": "crop_failure",
+        "place": "Maradi",
+        "country": "Niger",
+        "event_date": "2026-10-15"
+      },
+      "predicted": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": {
+          "name": "",
+          "country": ""
+        },
+        "event_date": null,
+        "count": null,
+        "stated_cause": null,
+        "evidence_quote": "[FAKE ECHO] Today's date: 2026-11-01 Region: eval Article language: en Title: Millet farmers",
+        "language": "en",
+        "confidence": 0.0
+      },
+      "error": null
+    },
+    {
+      "id": "syn-05",
+      "expected": {
+        "is_relevant": true,
+        "event_type": "heat_illness",
+        "place": "Jakarta",
+        "country": "Indonesia",
+        "event_date": "2026-10-27"
+      },
+      "predicted": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": {
+          "name": "",
+          "country": ""
+        },
+        "event_date": null,
+        "count": null,
+        "stated_cause": null,
+        "evidence_quote": "[FAKE ECHO] Today's date: 2026-11-01 Region: eval Article language: en Title: Jakarta clinic",
+        "language": "en",
+        "confidence": 0.0
+      },
+      "error": null
+    },
+    {
+      "id": "syn-06",
+      "expected": {
+        "is_relevant": true,
+        "event_type": "flood",
+        "place": "Quezon City",
+        "country": "Philippines",
+        "event_date": "2026-10-26"
+      },
+      "predicted": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": {
+          "name": "",
+          "country": ""
+        },
+        "event_date": null,
+        "count": null,
+        "stated_cause": null,
+        "evidence_quote": "[FAKE ECHO] Today's date: 2026-11-01 Region: eval Article language: en Title: Two dead as fl",
+        "language": "en",
+        "confidence": 0.0
+      },
+      "error": null
+    },
+    {
+      "id": "syn-07",
+      "expected": {
+        "is_relevant": true,
+        "event_type": "drought",
+        "place": "Khartoum",
+        "country": "Sudan",
+        "event_date": "2026-10-10"
+      },
+      "predicted": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": {
+          "name": "",
+          "country": ""
+        },
+        "event_date": null,
+        "count": null,
+        "stated_cause": null,
+        "evidence_quote": "[FAKE ECHO] Today's date: 2026-11-01 Region: eval Article language: en Title: Drought deepen",
+        "language": "en",
+        "confidence": 0.0
+      },
+      "error": null
+    },
+    {
+      "id": "syn-08",
+      "expected": {
+        "is_relevant": true,
+        "event_type": "wildfire",
+        "place": "Chiang Mai",
+        "country": "Thailand",
+        "event_date": "2026-10-29"
+      },
+      "predicted": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": {
+          "name": "",
+          "country": ""
+        },
+        "event_date": null,
+        "count": null,
+        "stated_cause": null,
+        "evidence_quote": "[FAKE ECHO] Today's date: 2026-11-01 Region: eval Article language: en Title: Wildfire burns",
+        "language": "en",
+        "confidence": 0.0
+      },
+      "error": null
+    },
+    {
+      "id": "syn-09",
+      "expected": {
+        "is_relevant": true,
+        "event_type": "disease",
+        "place": "Maiduguri",
+        "country": "Nigeria",
+        "event_date": "2026-10-24"
+      },
+      "predicted": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": {
+          "name": "",
+          "country": ""
+        },
+        "event_date": null,
+        "count": null,
+        "stated_cause": null,
+        "evidence_quote": "[FAKE ECHO] Today's date: 2026-11-01 Region: eval Article language: en Title: Cholera cases ",
+        "language": "en",
+        "confidence": 0.0
+      },
+      "error": null
+    },
+    {
+      "id": "syn-10",
+      "expected": {
+        "is_relevant": true,
+        "event_type": "heat_death",
+        "place": "Surabaya",
+        "country": "Indonesia",
+        "event_date": "2026-10-23"
+      },
+      "predicted": {
+        "is_relevant": false,
+        "event_type": null,
+        "place": {
+          "name": "",
+          "country": ""
+        },
+        "event_date": null,
+        "count": null,
+        "stated_cause": null,
+        "evidence_quote": "[FAKE ECHO] Today's date: 2026-11-01 Region: eval Article language: en Title: Seven heat dea",
+        "language": "en",
+        "confidence": 0.0
+      },
+      "error": null
+    }
+  ]
+}

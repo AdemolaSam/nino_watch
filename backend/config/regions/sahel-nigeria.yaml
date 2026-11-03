@@ -1,0 +1,17 @@
+id: sahel-nigeria
+name: Nigeria and the Sahel
+names: [Nigeria and the Sahel]
+risk: extreme            # moderate | high | extreme (from NOAA/WMO outlooks, edited by hand)
+intensity: 0.95
+pilot: true
+center: {lat: 12, lng: 8}
+bbox: [-17, 2, 40, 24]   # west, south, east, north
+countries: [Nigeria, Niger, Chad, Sudan, Mali, Burkina Faso]
+languages: [en, ha, yo, pcm]          # gated by tested languages, see BACKEND.md 8.6
+# Sources verified 1 Nov 2026: feed reachable, robots allow. Full ToS review
+# still pending before production use; demo use only (headlines + short excerpt).
+news_sources:
+  - {name: "Punch Nigeria", url: "https://punchng.com/feed/", language: en, ownership_group: "Punch Nigeria"}
+  - {name: "Vanguard", url: "https://www.vanguardngr.com/feed/", language: en, ownership_group: "Vanguard Media"}
+official_sources: []
+weather: {hot_threshold_c: 35, anomaly_threshold_c: 1.5, baseline_start: 2015, baseline_end: 2025}
