@@ -8,6 +8,8 @@ center: {lat: -20, lng: 25}
 bbox: [10, -35, 42, -5]
 countries: [South Africa, Zimbabwe, Zambia, Mozambique, Botswana, Namibia, Malawi, Angola]
 languages: [en]
-news_sources: []
+news_sources:
+  - {name: "TimesLIVE South Africa", url: "https://www.timeslive.co.za/arc/outboundfeeds/rss/category/news/", language: en, ownership_group: "Arena Holdings", max_items: 30}
+  - {name: "SABC News South Africa", url: "https://www.sabcnews.com/sabcnews/category/south-africa/feed/", language: en, ownership_group: "SABC", max_items: 30}
 official_sources: []
 weather: {hot_threshold_c: 35, anomaly_threshold_c: 1.5, baseline_start: 2015, baseline_end: 2025}

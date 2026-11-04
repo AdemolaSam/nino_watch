@@ -6,7 +6,7 @@ from app.services.advisory import generate_all_regions, generate_region
 from app.services.cluster import cluster_all_regions, cluster_events
 from app.services.extract import extract_article, extract_pending
 from app.services.geocode import geocode_event
-from app.services.ingest import ingest_all_pilots, ingest_region
+from app.services.ingest import ingest_all_regions, ingest_region
 from app.services.outlet import generate_region_packs
 from app.services.regions import load_all_region_configs, load_region_config
 from app.services.verify import verify_cluster, verify_pending
@@ -51,7 +51,7 @@ def ingest_all_task() -> dict[str, int]:
     async def run() -> dict[str, int]:
         factory = get_session_factory()
         async with factory() as session:
-            results = await ingest_all_pilots(session)
+            results = await ingest_all_regions(session)
         await _set_last_ingest_at()
         return results
 

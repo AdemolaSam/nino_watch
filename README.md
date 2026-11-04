@@ -70,9 +70,11 @@ upserts regions, restarts the stack, and checks `/api/health`. Pull requests
 run CI only. The deployment uses SSH port 22 and expects the checkout at
 `$HOME/nino_watch` on the VPS.
 
-Only the two pilot regions currently ingest news feeds. Climate grids and
-English advisories run for all six regions; the six outlook areas are curated
-from linked WMO publications. Seasonal outlooks are regional
+All six regions ingest two independent publisher feeds each. The intake limits
+new feeds to the first 30 entries per source per run; the extraction pipeline
+keeps only placed, climate-linked reports within the region. Climate grids and
+English advisories run for all six regions; the outlook areas are curated from
+linked WMO publications. Seasonal outlooks are regional
 signals, not incident predictions or local forecasts. Machine translated
 advisories are labeled previews until a speaker reviews them. Community
 reports require admin approval before public display and do not affect

@@ -83,8 +83,6 @@ async def cluster_events(session: AsyncSession, region_id: str) -> dict[str, int
 async def cluster_all_regions(session: AsyncSession) -> dict[str, dict[str, int]]:
     results = {}
     for region in load_all_region_configs():
-        if not region.pilot:
-            continue
         counts = await cluster_events(session, region.id)
         counts["merged"] = await merge_same_events(session, region.id)
         results[region.id] = counts

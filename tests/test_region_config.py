@@ -29,6 +29,13 @@ def test_load_all_regions():
     assert sorted(pilots) == ["sahel-nigeria", "southeast-asia"]
 
 
+def test_every_region_has_independent_news_sources():
+    for region in load_all_region_configs():
+        assert len(region.news_sources) >= 2, region.id
+        assert len({source["ownership_group"] for source in region.news_sources}) >= 2
+        assert all(source["url"].startswith("https://") for source in region.news_sources)
+
+
 def test_unknown_region_raises():
     with pytest.raises(FileNotFoundError):
         load_region_config("atlantis")

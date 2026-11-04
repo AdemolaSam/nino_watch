@@ -194,7 +194,7 @@ async def ingest_source(
         return 0
     configured_lang = source.get("language", "")
     stored = 0
-    for item in items:
+    for item in items[: int(source.get("max_items", len(items)))]:
         url_hash = sha256(item["url"])
         detected = detect_language(f"{item['title']} {item['excerpt']}")
         if configured_lang:
@@ -236,10 +236,10 @@ async def ingest_region(session: AsyncSession, region: RegionConfig) -> int:
     return total
 
 
-async def ingest_all_pilots(session: AsyncSession) -> dict[str, int]:
+async def ingest_all_regions(session: AsyncSession) -> dict[str, int]:
     results = {}
     for region in load_all_region_configs():
-        if not region.pilot:
+        if not region.news_sources and not region.official_sources:
             continue
         try:
             results[region.id] = await ingest_region(session, region)

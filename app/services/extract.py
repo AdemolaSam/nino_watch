@@ -19,6 +19,11 @@ logger = logging.getLogger("ninowatch.extract")
 PROMPT_NAME = "extract"
 
 
+def within_region(lat: float, lng: float, bbox: list[float]) -> bool:
+    west, south, east, north = bbox
+    return west <= lng <= east and south <= lat <= north
+
+
 def build_extraction_user(
     *, title: str, excerpt: str, region_name: str, language: str, today: str
 ) -> str:
@@ -105,6 +110,16 @@ async def extract_article(
     if not await geocode_event(session, event.id):
         return None
     refreshed = await events_repo.get_event(session, event.id)
+    if (
+        refreshed is not None
+        and region is not None
+        and refreshed.lat is not None
+        and refreshed.lng is not None
+        and not within_region(refreshed.lat, refreshed.lng, region.bbox)
+    ):
+        logger.info("discarding event %d outside %s", refreshed.id, region.id)
+        await events_repo.delete_event(session, refreshed)
+        return None
     return refreshed
 
 

@@ -28,8 +28,16 @@ TEST_DB_URL = os.environ.get(
 def test_country_to_iso():
     assert geocode_service.country_to_iso("Nigeria") == "NG"
     assert geocode_service.country_to_iso("viet nam") == "VN"
+    assert geocode_service.country_to_iso("Perú") == "PE"
+    assert geocode_service.country_to_iso("South Africa") == "ZA"
     assert geocode_service.country_to_iso("Atlantis") is None
     assert geocode_service.country_to_iso(None) is None
+
+
+def test_extracted_event_must_be_inside_its_region():
+    bbox = [-84, -20, -68, 5]
+    assert extract_service.within_region(-12.1, -77.0, bbox)
+    assert not extract_service.within_region(14.0, 121.0, bbox)
 
 
 def test_parse_event_date():

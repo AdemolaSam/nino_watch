@@ -3,11 +3,13 @@ name: East Africa
 names: [East Africa]
 risk: high
 intensity: 0.75
-pilot: false  # no news feeds yet; climate and advisories run for every region
+pilot: false  # pilot flag controls preview translations, not news coverage
 center: {lat: 0, lng: 38}
 bbox: [28, -12, 52, 12]   # west, south, east, north
 countries: [Kenya, Ethiopia, Somalia, Sudan]
 languages: [en, sw]
-news_sources: []
+news_sources:
+  - {name: "Daily Nation Kenya", url: "https://nation.africa/kenya/rss.xml", language: en, ownership_group: "Nation Media Group", max_items: 30}
+  - {name: "The Standard Kenya", url: "https://www.standardmedia.co.ke/rss/kenya.php", language: en, ownership_group: "Standard Group", max_items: 30}
 official_sources: []
 weather: {hot_threshold_c: 35, anomaly_threshold_c: 1.5, baseline_start: 2015, baseline_end: 2025}
