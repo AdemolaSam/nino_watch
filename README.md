@@ -39,8 +39,33 @@ Integration tests need a dedicated `nino_test` database. CI creates it with
 Set `MODEL_API_KEY`, `ADMIN_TOKEN`, `DATABASE_URL`, `REDIS_URL`, and
 `CORS_ORIGINS` in the deployment environment. Run Alembic before serving
 traffic and upsert regions after migrations. Serve the API through HTTPS.
-The Compose file is a local development stack; replace its example database
-credentials and exposed service ports for a VPS.
+Compose binds the API, Postgres, Redis, and Flower to localhost, so Caddy can
+proxy the API on port 8000 without exposing the other services publicly.
+
+### One-time VPS setup for automatic deployment
+
+Install Docker with Compose, Git, and curl, and give the deployment user access
+to Docker. Clone this repository into `$HOME/nino_watch`. Create
+`$HOME/nino_watch/.env` from `.env.example` on the VPS. Set a strong
+`POSTGRES_PASSWORD` before the first database start, and set `DATABASE_URL`
+to `postgresql+asyncpg://nino:<same-password>@db:5432/nino`. Use an
+alphanumeric password so the URL needs no escaping. Set `MODEL_API_KEY`,
+`ADMIN_TOKEN`, and `CORS_ORIGINS` to the real frontend origin. Keep this file
+on the VPS; it is ignored by Git.
+
+Add these GitHub Actions repository secrets:
+
+- `VPS_HOST`: VPS address.
+- `VPS_USER`: deployment username.
+- `VPS_SSH_KEY`: private SSH key whose public key is in that user's
+  `~/.ssh/authorized_keys`.
+- `VPS_HOST_KEY`: the VPS's verified SSH host-key line for `known_hosts`.
+
+On each push to `main`, CI must pass before the deploy job connects over SSH,
+checks out the exact tested commit, builds the services, applies migrations,
+upserts regions, restarts the stack, and checks `/api/health`. Pull requests
+run CI only. The deployment uses SSH port 22 and expects the checkout at
+`$HOME/nino_watch` on the VPS.
 
 Only the two pilot regions currently ingest news feeds. The six outlook areas
 are curated from linked WMO publications. Seasonal outlooks are regional
