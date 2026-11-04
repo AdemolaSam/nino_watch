@@ -59,7 +59,9 @@ Add these GitHub Actions repository secrets:
 - `VPS_USER`: deployment username.
 - `VPS_SSH_KEY`: private SSH key whose public key is in that user's
   `~/.ssh/authorized_keys`.
-- `VPS_HOST_KEY`: the VPS's verified SSH host-key line for `known_hosts`.
+- `VPS_HOST_KEY`: the VPS's verified public SSH host key. A raw
+  `ssh-ed25519 AAAA...` line or a full `known_hosts` line works; a
+  `SHA256:...` fingerprint alone does not.
 
 On each push to `main`, CI must pass before the deploy job connects over SSH,
 checks out the exact tested commit, builds the services, applies migrations,

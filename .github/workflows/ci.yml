@@ -61,8 +61,25 @@ jobs:
           done
           install -m 700 -d "$RUNNER_TEMP/deploy-ssh"
           printf '%s\n' "$VPS_SSH_KEY" > "$RUNNER_TEMP/deploy-ssh/id_ed25519"
-          printf '%s\n' "$VPS_HOST_KEY" > "$RUNNER_TEMP/deploy-ssh/known_hosts"
+          if ! printf '%s\n' "$VPS_HOST_KEY" | awk -v host="$VPS_HOST" '
+            $1 ~ /^(ssh-ed25519|ecdsa-sha2-nistp256|ssh-rsa)$/ {
+              print host, $1, $2
+              found = 1
+            }
+            $2 ~ /^(ssh-ed25519|ecdsa-sha2-nistp256|ssh-rsa)$/ {
+              print host, $2, $3
+              found = 1
+            }
+            END { if (!found) exit 1 }
+          ' > "$RUNNER_TEMP/deploy-ssh/known_hosts"; then
+            echo "VPS_HOST_KEY must contain the VPS public host key, not its fingerprint." >&2
+            exit 1
+          fi
           chmod 600 "$RUNNER_TEMP/deploy-ssh/id_ed25519" "$RUNNER_TEMP/deploy-ssh/known_hosts"
+          if ! ssh-keygen -l -f "$RUNNER_TEMP/deploy-ssh/known_hosts" > /dev/null; then
+            echo "VPS_HOST_KEY is not a valid SSH public host key." >&2
+            exit 1
+          fi
           ssh -i "$RUNNER_TEMP/deploy-ssh/id_ed25519" \
             -o StrictHostKeyChecking=yes \
             -o UserKnownHostsFile="$RUNNER_TEMP/deploy-ssh/known_hosts" \
