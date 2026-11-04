@@ -8,10 +8,9 @@ center: {lat: 5, lng: 110}
 bbox: [95, -10, 140, 20]   # west, south, east, north
 countries: [Indonesia, Philippines, Vietnam, Thailand]
 languages: [en, id, tl, vi, th]
-# Sources verified 1 Nov 2026: feed reachable, robots allow. Full ToS review
-# still pending before production use; demo use only (headlines + short excerpt).
+# GMA feed verified 4 Nov 2026: HTTP 200, 15 entries, robots allow.
 news_sources:
-  - {name: "Philstar", url: "https://www.philstar.com/rss/headlines", language: en, ownership_group: "Philstar Media Group"}
+  - {name: "GMA News Online", url: "https://data.gmanews.tv/gno/rss/news/feed.xml", language: en, ownership_group: "GMA Network"}
   - {name: "Inquirer Newsinfo", url: "https://newsinfo.inquirer.net/feed", language: en, ownership_group: "Inquirer Group"}
 official_sources: []
 weather: {hot_threshold_c: 35, anomaly_threshold_c: 1.5, baseline_start: 2015, baseline_end: 2025}
