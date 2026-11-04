@@ -167,6 +167,25 @@ async def test_fetch_json_retries_on_429(monkeypatch):
     assert len(calls) == 2
 
 
+async def test_baseline_rate_limit_stops_remaining_batches(monkeypatch):
+    import httpx
+
+    calls = 0
+
+    async def rate_limited(url, params):
+        nonlocal calls
+        calls += 1
+        request = httpx.Request("GET", url)
+        response = httpx.Response(429, request=request)
+        raise httpx.HTTPStatusError("rate limited", request=request, response=response)
+
+    monkeypatch.setattr(weather, "fetch_json", rate_limited)
+    coords = [(float(i), 0.0) for i in range(25)]
+    means = await weather.baseline_means(coords, 11, 4, 2015, 2025, LlmCache())
+    assert calls == 1
+    assert means == {coord: None for coord in coords}
+
+
 async def test_daily_max_archive_path(monkeypatch):
     async def fake_fetch(url, params):
         assert "archive" in url

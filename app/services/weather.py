@@ -143,6 +143,11 @@ async def baseline_means(
                 },
             )
         except Exception as e:
+            if isinstance(e, httpx.HTTPStatusError) and e.response.status_code == 429:
+                logger.warning("archive rate-limited; skipping remaining baseline requests")
+                for coord in missing[i:]:
+                    results[coord] = None
+                break
             logger.warning("archive fetch failed (%s)", e)
             for coord in batch:
                 results[coord] = None
@@ -337,12 +342,19 @@ async def refresh_region_grid(session: AsyncSession, region_id: str) -> int:
     cols, rows, cells = grid_for_bbox(list(region.bbox))
     coords = [(lat, lng) for lat, lng in cells]
     today = datetime.now(UTC).date()
+    existing = {
+        (cell.lat, cell.lng): cell
+        for cell in await climate_repo.list_region_cells(session, region_id)
+    }
     maxima = await today_maxima(coords)
     means = await baseline_means(coords, today.month, today.day, start_year, end_year)
     stored = []
     for lat, lng in coords:
         temp = maxima.get((lat, lng))
         base = means.get((lat, lng))
+        prior = existing.get((lat, lng))
+        if base is None and prior is not None and prior.computed_at.date() == today:
+            base = prior.baseline_c
         if temp is None:
             continue
         temp = round(temp, 1)
@@ -357,6 +369,11 @@ async def refresh_region_grid(session: AsyncSession, region_id: str) -> int:
                 "anomaly_c": (round(temp - base, 2)) if base is not None else None,
             }
         )
+    if not stored:
+        logger.warning(
+            "climate refresh for %s returned no temperatures; keeping prior grid", region_id
+        )
+        return 0
     await climate_repo.replace_region_cells(session, region_id, stored)
     logger.info("climate refresh for %s: %d/%d cells", region_id, len(stored), len(coords))
     return len(stored)

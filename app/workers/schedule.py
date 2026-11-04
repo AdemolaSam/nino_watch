@@ -14,7 +14,7 @@ beat_schedule: dict = {
     },
     "climate-all": {
         "task": "ninowatch.refresh_climate_all",
-        "schedule": 21600,  # every 6 hours
+        "schedule": 86400,  # daily forecast refresh for all six regions
     },
     "verify-pending": {
         "task": "ninowatch.verify_pending_all",

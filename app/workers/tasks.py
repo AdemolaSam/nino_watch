@@ -186,4 +186,8 @@ def generate_advisories_all_task() -> dict[str, dict]:
         async with factory() as session:
             return await generate_all_regions(session)
 
-    return asyncio.run(run())
+    results = asyncio.run(run())
+    for region_id, result in results.items():
+        if result.get("version") is not None:
+            generate_packs_task.delay(region_id)
+    return results
