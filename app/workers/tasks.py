@@ -126,8 +126,7 @@ def refresh_climate_all_task() -> dict[str, int]:
         factory = get_session_factory()
         async with factory() as session:
             for region in load_all_region_configs():
-                if region.pilot:
-                    results[region.id] = await refresh_region_grid(session, region.id)
+                results[region.id] = await refresh_region_grid(session, region.id)
         return results
 
     return asyncio.run(run())

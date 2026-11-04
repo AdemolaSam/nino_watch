@@ -217,6 +217,5 @@ async def generate_region(
 async def generate_all_regions(session: AsyncSession) -> dict[str, dict]:
     results = {}
     for region in load_all_region_configs():
-        if region.pilot:
-            results[region.id] = await generate_region(session, region.id)
+        results[region.id] = await generate_region(session, region.id)
     return results
