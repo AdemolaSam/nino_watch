@@ -39,8 +39,9 @@ Integration tests need a dedicated `nino_test` database. CI creates it with
 Set `MODEL_API_KEY`, `ADMIN_TOKEN`, `DATABASE_URL`, `REDIS_URL`, and
 `CORS_ORIGINS` in the deployment environment. Run Alembic before serving
 traffic and upsert regions after migrations. Serve the API through HTTPS.
-Compose binds the API, Postgres, Redis, and Flower to localhost, so Caddy can
-proxy the API on port 8000 without exposing the other services publicly.
+Compose binds the API, Postgres, Redis, and Flower to localhost. The API uses
+port 8001 and Flower uses port 5556 on the VPS, so Caddy should proxy the API
+to port 8001 without exposing the other services publicly.
 
 ### One-time VPS setup for automatic deployment
 

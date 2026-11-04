@@ -30,12 +30,12 @@ fi
 
 docker compose up -d db redis
 docker compose build api worker beat flower
-docker compose run --rm api env PYTHONPATH=/srv alembic upgrade head
-docker compose run --rm api python -m scripts.seed_regions
+docker compose run --rm -T api env PYTHONPATH=/srv alembic upgrade head < /dev/null
+docker compose run --rm -T api python -m scripts.seed_regions < /dev/null
 docker compose up -d --no-build
 
 for attempt in {1..15}; do
-  if health="$(curl -fsS http://127.0.0.1:8000/api/health)" && \
+  if health="$(curl -fsS http://127.0.0.1:8001/api/health)" && \
     [[ "$health" == *'"status":"ok"'* ]]; then
     echo "$health"
     echo "Deployment healthy at $deploy_sha"

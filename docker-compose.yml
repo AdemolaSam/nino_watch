@@ -37,7 +37,7 @@ services:
       DATABASE_URL: ${DATABASE_URL:-postgresql+asyncpg://nino:nino@db:5432/nino}
       REDIS_URL: redis://redis:6379/0
     ports:
-      - "127.0.0.1:8000:8000"
+      - "127.0.0.1:8001:8000"
     depends_on:
       db:
         condition: service_healthy
@@ -84,7 +84,7 @@ services:
       DATABASE_URL: ${DATABASE_URL:-postgresql+asyncpg://nino:nino@db:5432/nino}
       REDIS_URL: redis://redis:6379/0
     ports:
-      - "127.0.0.1:5555:5555"
+      - "127.0.0.1:5556:5555"
     depends_on:
       redis:
         condition: service_healthy
