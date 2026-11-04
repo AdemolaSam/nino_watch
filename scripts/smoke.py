@@ -137,11 +137,13 @@ async def main() -> None:
         transport=ASGITransport(app=app), base_url="http://test"
     ) as client:
         regions = (await client.get("/api/regions")).json()
-        check("regions list", len(regions) == 3, str(len(regions)))
+        check("regions list", len(regions) == 6, str(len(regions)))
+        outlooks = (await client.get("/api/outlooks")).json()
+        check("outlooks list", len(outlooks) == 6, str(len(outlooks)))
         incidents = (
             await client.get("/api/incidents", params={"regionId": "sahel-nigeria"})
         ).json()
-        live = [i for i in incidents if not i["title"].startswith("[Sample]")]
+        live = incidents
         check("live incident present", len(live) == 1, str(len(live)))
         check("live incident corroborated", live[0]["status"] == "corroborated", live[0]["status"])
         advisory = (

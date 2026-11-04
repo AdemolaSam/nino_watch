@@ -1,6 +1,0 @@
-.env
-.venv/
-__pycache__/
-*.py[oc]
-evals/language/
-# evals/extraction/ is committed: labels.jsonl (hand labels) + report.json.

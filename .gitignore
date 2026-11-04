@@ -8,5 +8,12 @@ wheels/
 
 # Virtual environments
 .venv
+.pytest_cache/
+.ruff_cache/
+.env
+.env.*
+!.env.example
+.DS_Store
+evals/language/
 PROJECT.md
 BACKEND.md

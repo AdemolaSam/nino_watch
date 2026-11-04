@@ -4,8 +4,8 @@ WORKDIR /srv
 
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /bin/uv
 
-COPY pyproject.toml README.md ./
-RUN uv sync --no-dev --no-install-project
+COPY pyproject.toml uv.lock README.md ./
+RUN uv sync --locked --no-dev --no-install-project
 
 COPY app ./app
 COPY alembic ./alembic

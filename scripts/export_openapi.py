@@ -1,6 +1,6 @@
 """Export the API contract for the frontend (BACKEND.md B10).
 
-Writes backend/openapi.json. The frontend generates types from it, e.g.:
+Writes openapi.json. The frontend generates types from it, e.g.:
   npx openapi-typescript openapi.json -o lib/api-types.ts
 
 Usage: uv run python scripts/export_openapi.py
