@@ -198,7 +198,7 @@ async def test_geocode_discards_unplaceable(session_factory, fake_llm, monkeypat
 
 async def test_geocode_nominatim_fallback(session_factory, fake_llm, monkeypatch):
     async def fallback(place, country):
-        return (1.5, 2.5)
+        return (8.5, 2.5)
 
     monkeypatch.setattr(geocode_service, "nominatim_lookup", fallback)
     fake_llm.queue(extraction_json(place={"name": "Smallville", "country": "Nigeria"}))
@@ -206,7 +206,20 @@ async def test_geocode_nominatim_fallback(session_factory, fake_llm, monkeypatch
         article = await make_article(session)
         event = await extract_service.extract_article(session, article.id)
         assert event is not None
-        assert (event.lat, event.lng) == (1.5, 2.5)
+        assert (event.lat, event.lng) == (8.5, 2.5)
+
+
+async def test_geocoded_event_outside_region_is_discarded(
+    session_factory, fake_llm, monkeypatch
+):
+    async def outside_region(place, country):
+        return (1.5, 2.5)
+
+    monkeypatch.setattr(geocode_service, "nominatim_lookup", outside_region)
+    fake_llm.queue(extraction_json(place={"name": "Elsewhere", "country": "Nigeria"}))
+    async with session_factory() as session:
+        article = await make_article(session)
+        assert await extract_service.extract_article(session, article.id) is None
 
 
 async def test_extract_pending_counts(session_factory, fake_llm, monkeypatch):
